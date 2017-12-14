@@ -46,9 +46,14 @@ describe('test parseNum', function() {
 })
 
 describe('test parseUrl', function() {
-	it('parer a url without protocol should return a url string with http protocol', function() {
+	it('parse a url without protocol should return a url string with http protocol', function() {
 		let url = '127.0.0.1';
 		url = util.parseUrl(url);
 		assert.notEqual(~url.indexOf('http'), 0);
+	})
+	it('parse a url with protocol should retur itself', function() {
+		let url = 'http://127.0.0.1';
+		let parseUrl = util.parseUrl(url);
+		assert.equal(url, parseUrl);
 	})
 })

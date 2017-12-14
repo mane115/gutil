@@ -4,6 +4,7 @@
 'use strict'
 
 let util = {
+	
 	/**
 	 * safe json parser
 	 * @param  {String} str string ready to parse
