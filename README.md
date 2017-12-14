@@ -1,5 +1,6 @@
-### gutil
+# gutil
 
+util collect
 	
 * ## `util.parseJSON`
 
@@ -56,7 +57,7 @@
 
 	* #### Return
 
-		`String`: parse url with protocol
+		`(String)`: parse url with protocol
 
 	* #### Example
 
