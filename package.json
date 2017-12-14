@@ -1,0 +1,23 @@
+{
+  "name": "gutil",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mane115/gutil.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mane115/gutil/issues"
+  },
+  "homepage": "https://github.com/mane115/gutil#readme",
+  "dependencies": {
+    "ghttp": "git+https://github.com/mane115/ghttp.git",
+    "mocha": "^4.0.1"
+  }
+}
