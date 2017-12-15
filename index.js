@@ -3,15 +3,14 @@
  */
 'use strict'
 let util = {
-	Http: require('ghttp'),
 	parse: require('./lib/parse'),
-	// fs: Promise.promisifyAll(require('fs')),
 }
 
 // if runtime is node, promisify fs and export util 
 if (process && process.title === 'node' && require) {
 	let Promise = require('bluebird');
 	util.fs = Promise.promisifyAll(require('fs'));
+	util.Http = require('ghttp');
 }
 if (module && module.exports) {
 	return module.exports = util;
