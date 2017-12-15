@@ -1,7 +1,31 @@
 # gutil
 
 util collect
-	
+
+* ## `util.fs`
+
+	* #### Description
+
+		promisify fs
+
+	* #### Source
+
+		```javascript
+		let fs = require('fs');
+		bluebird.promisifyAll('fs');
+		```
+
+	* #### Example
+
+		```javascript
+		util.fs.readFileAsync(path.resolve(__diranme, './')).then(content => {
+			// => file content
+		}).catch(err => {
+			// => 
+			readFile error 
+		})
+		```
+
 * ## `util.parseJSON`
 
 	* #### Arguments

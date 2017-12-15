@@ -2,6 +2,9 @@
  * util 为了兼容较旧的node版本: >= 4.6.0(支持promise)，所以大部分使用es5语法编写
  */
 'use strict'
+let Promise = require('bluebird');
+let fs = require('fs');
+Promise.promisifyAll(fs);
 
 let util = {
 
@@ -39,4 +42,5 @@ let util = {
 	},
 };
 util.Http = require('ghttp');
+util.fs = fs;
 module.exports = util
