@@ -26,7 +26,7 @@ util collect
 		})
 		```
 
-* ## `util.parseJSON`
+* ## `util.parse.json`
 
 	* #### Arguments
 
@@ -39,14 +39,14 @@ util collect
 	* #### Example
 
 		```javascript
-		util.parseJSON(`{"a":1}`);
+		util.parse.json(`{"a":1}`);
 		// => { a: 1 }
 
-		util.pasrseJSON('normal string');
+		util.parse.json('normal string');
 		// => normal string
 		```
 
-* ## `util.parseNumber`
+* ## `util.parse.number`
 
 	* #### Arguments
 
@@ -61,17 +61,17 @@ util collect
 	* #### Example
 
 		```javascript
-		util.parseNumber('1');
+		util.parse.number('1');
 		// => 1
 
-		util.parseNumber('normal string', 10);
+		util.parse.number('normal string', 10);
 		// => 10
 
-		util.parseNumber('normal string');
+		util.parse.number('normal string');
 		// => 0
 		```
 
-* ## `util.parseUrl`
+* ## `util.parse.url`
 
 	* #### Arguments
 
@@ -86,12 +86,12 @@ util collect
 	* #### Example
 
 		```javascript
-		util.parseUrl('127.0.0.1');
+		util.parse.url('127.0.0.1');
 		// => 'http://127.0.0.1'
 
-		util.parseUrl('http://127.0.0.1');
+		util.parse.url('http://127.0.0.1');
 		// => 'http://127.0.0.1'
 
-		util.parseUrl('127.0.0.1:6379', 'redis');
+		util.parse.url('127.0.0.1:6379', 'redis');
 		// => 'redis://127.0.0.1:6379'
 		```

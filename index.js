@@ -3,44 +3,8 @@
  */
 'use strict'
 let Promise = require('bluebird');
-let fs = require('fs');
-Promise.promisifyAll(fs);
-
-let util = {
-
-	/**
-	 * safe json parser
-	 * @param  {String} str string ready to parse
-	 * @return {Object || any}     if str is a JSON,return Object,else return itself
-	 */
-	parseJSON: function(str) {
-		try {
-			str = JSON.parse(str);
-		} finally {
-			return str;
-		}
-	},
-
-	/**
-	 * num parser
-	 * @param  {Any} num          value ready to be parse to number
-	 * @param  {Number} defaultValue if parse fail,return default value, default to 0
-	 * @return {Number}              parse result
-	 */
-	parseNumber: function(num, defaultValue) {
-		if (!defaultValue) defaultValue = 0;
-		num = +num;
-		return isNaN(num) ? defaultValue : num;
-	},
-
-	parseUrl: function(url, protocol) {
-		if (!protocol) protocol = 'http';
-		if (!~protocol.indexOf('://')) {
-			protocol += '://'
-		}
-		return ~url.indexOf(protocol) ? url : protocol + url;
-	},
-};
-util.Http = require('ghttp');
-util.fs = fs;
-module.exports = util
+module.exports = {
+	Http: require('ghttp'),
+	parse: require('./lib/parse'),
+	fs: Promise.promisifyAll(require('fs')),
+}
