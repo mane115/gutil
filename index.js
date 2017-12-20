@@ -11,6 +11,7 @@ if (process && process.title === 'node' && require) {
 	let Promise = require('bluebird');
 	util.fs = Promise.promisifyAll(require('fs'));
 	util.Http = require('ghttp');
+	util.process = require('./lib/process');
 }
 if (module && module.exports) {
 	return module.exports = util;
