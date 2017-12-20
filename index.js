@@ -6,8 +6,8 @@ let util = {
 	parse: require('./lib/parse'),
 }
 
-// if runtime is node, promisify fs and export util 
-if (process && process.title === 'node' && require) {
+// if runtime is node, promisify fs and export util
+if (process && process.release && process.release.name === 'node') {
 	let Promise = require('bluebird');
 	util.fs = Promise.promisifyAll(require('fs'));
 	util.Http = require('ghttp');
